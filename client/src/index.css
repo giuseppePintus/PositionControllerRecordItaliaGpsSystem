@@ -1,0 +1,654 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   CSS VARIABLES - TEMA APPLICAZIONE
+   ============================================================================ */
+:root {
+  /* Colore principale - Default blu */
+  --color-primary-50: 239 246 255;
+  --color-primary-100: 219 234 254;
+  --color-primary-200: 191 219 254;
+  --color-primary-300: 147 197 253;
+  --color-primary-400: 96 165 250;
+  --color-primary-500: 59 130 246;
+  --color-primary-600: 37 99 235;
+  --color-primary-700: 29 78 216;
+  --color-primary-800: 30 64 175;
+  --color-primary-900: 30 58 138;
+
+  /* Colore secondario - Default slate */
+  --color-secondary-50: 248 250 252;
+  --color-secondary-100: 241 245 249;
+  --color-secondary-200: 226 232 240;
+  --color-secondary-300: 203 213 225;
+  --color-secondary-400: 148 163 184;
+  --color-secondary-500: 100 116 139;
+  --color-secondary-600: 71 85 105;
+  --color-secondary-700: 51 65 85;
+  --color-secondary-800: 30 41 59;
+  --color-secondary-900: 15 23 42;
+
+  /* Sidebar colori per sezioni */
+  --sidebar-satellitare: 16 185 129;
+  --sidebar-gestionale: 59 130 246;
+
+  /* Background e Surface */
+  --color-bg: 255 255 255;
+  --color-surface: 249 250 251;
+  --color-text: 17 24 39;
+  --color-text-muted: 107 114 128;
+}
+
+/* ============================================================================
+   TEMI COLORE PRINCIPALE
+   ============================================================================ */
+
+/* Tema Blue */
+[data-theme="blue"] {
+  --color-primary-50: 239 246 255;
+  --color-primary-100: 219 234 254;
+  --color-primary-200: 191 219 254;
+  --color-primary-300: 147 197 253;
+  --color-primary-400: 96 165 250;
+  --color-primary-500: 59 130 246;
+  --color-primary-600: 37 99 235;
+  --color-primary-700: 29 78 216;
+  --color-primary-800: 30 64 175;
+  --color-primary-900: 30 58 138;
+}
+
+/* Tema Emerald */
+[data-theme="emerald"] {
+  --color-primary-50: 236 253 245;
+  --color-primary-100: 209 250 229;
+  --color-primary-200: 167 243 208;
+  --color-primary-300: 110 231 183;
+  --color-primary-400: 52 211 153;
+  --color-primary-500: 16 185 129;
+  --color-primary-600: 5 150 105;
+  --color-primary-700: 4 120 87;
+  --color-primary-800: 6 95 70;
+  --color-primary-900: 6 78 59;
+}
+
+/* Tema Orange */
+[data-theme="orange"] {
+  --color-primary-50: 255 247 237;
+  --color-primary-100: 255 237 213;
+  --color-primary-200: 254 215 170;
+  --color-primary-300: 253 186 116;
+  --color-primary-400: 251 146 60;
+  --color-primary-500: 249 115 22;
+  --color-primary-600: 234 88 12;
+  --color-primary-700: 194 65 12;
+  --color-primary-800: 154 52 18;
+  --color-primary-900: 124 45 18;
+}
+
+/* Tema Purple */
+[data-theme="purple"] {
+  --color-primary-50: 250 245 255;
+  --color-primary-100: 243 232 255;
+  --color-primary-200: 233 213 255;
+  --color-primary-300: 216 180 254;
+  --color-primary-400: 192 132 252;
+  --color-primary-500: 168 85 247;
+  --color-primary-600: 147 51 234;
+  --color-primary-700: 126 34 206;
+  --color-primary-800: 107 33 168;
+  --color-primary-900: 88 28 135;
+}
+
+/* Tema Rose */
+[data-theme="rose"] {
+  --color-primary-50: 255 241 242;
+  --color-primary-100: 255 228 230;
+  --color-primary-200: 254 205 211;
+  --color-primary-300: 253 164 175;
+  --color-primary-400: 251 113 133;
+  --color-primary-500: 244 63 94;
+  --color-primary-600: 225 29 72;
+  --color-primary-700: 190 18 60;
+  --color-primary-800: 159 18 57;
+  --color-primary-900: 136 19 55;
+}
+
+/* Tema Cyan */
+[data-theme="cyan"] {
+  --color-primary-50: 236 254 255;
+  --color-primary-100: 207 250 254;
+  --color-primary-200: 165 243 252;
+  --color-primary-300: 103 232 249;
+  --color-primary-400: 34 211 238;
+  --color-primary-500: 6 182 212;
+  --color-primary-600: 8 145 178;
+  --color-primary-700: 14 116 144;
+  --color-primary-800: 21 94 117;
+  --color-primary-900: 22 78 99;
+}
+
+/* ============================================================================
+   TEMI COLORE SECONDARIO
+   ============================================================================ */
+
+/* Secondario Slate (default) */
+[data-secondary="slate"] {
+  --color-secondary-50: 248 250 252;
+  --color-secondary-100: 241 245 249;
+  --color-secondary-200: 226 232 240;
+  --color-secondary-300: 203 213 225;
+  --color-secondary-400: 148 163 184;
+  --color-secondary-500: 100 116 139;
+  --color-secondary-600: 71 85 105;
+  --color-secondary-700: 51 65 85;
+  --color-secondary-800: 30 41 59;
+  --color-secondary-900: 15 23 42;
+}
+
+/* Secondario Amber */
+[data-secondary="amber"] {
+  --color-secondary-50: 255 251 235;
+  --color-secondary-100: 254 243 199;
+  --color-secondary-200: 253 230 138;
+  --color-secondary-300: 252 211 77;
+  --color-secondary-400: 251 191 36;
+  --color-secondary-500: 245 158 11;
+  --color-secondary-600: 217 119 6;
+  --color-secondary-700: 180 83 9;
+  --color-secondary-800: 146 64 14;
+  --color-secondary-900: 120 53 15;
+}
+
+/* Secondario Lime */
+[data-secondary="lime"] {
+  --color-secondary-50: 247 254 231;
+  --color-secondary-100: 236 252 203;
+  --color-secondary-200: 217 249 157;
+  --color-secondary-300: 190 242 100;
+  --color-secondary-400: 163 230 53;
+  --color-secondary-500: 132 204 22;
+  --color-secondary-600: 101 163 13;
+  --color-secondary-700: 77 124 15;
+  --color-secondary-800: 63 98 18;
+  --color-secondary-900: 54 83 20;
+}
+
+/* Secondario Teal */
+[data-secondary="teal"] {
+  --color-secondary-50: 240 253 250;
+  --color-secondary-100: 204 251 241;
+  --color-secondary-200: 153 246 228;
+  --color-secondary-300: 94 234 212;
+  --color-secondary-400: 45 212 191;
+  --color-secondary-500: 20 184 166;
+  --color-secondary-600: 13 148 136;
+  --color-secondary-700: 15 118 110;
+  --color-secondary-800: 17 94 89;
+  --color-secondary-900: 19 78 74;
+}
+
+/* Secondario Indigo */
+[data-secondary="indigo"] {
+  --color-secondary-50: 238 242 255;
+  --color-secondary-100: 224 231 255;
+  --color-secondary-200: 199 210 254;
+  --color-secondary-300: 165 180 252;
+  --color-secondary-400: 129 140 248;
+  --color-secondary-500: 99 102 241;
+  --color-secondary-600: 79 70 229;
+  --color-secondary-700: 67 56 202;
+  --color-secondary-800: 55 48 163;
+  --color-secondary-900: 49 46 129;
+}
+
+/* Secondario Pink */
+[data-secondary="pink"] {
+  --color-secondary-50: 253 242 248;
+  --color-secondary-100: 252 231 243;
+  --color-secondary-200: 251 207 232;
+  --color-secondary-300: 249 168 212;
+  --color-secondary-400: 244 114 182;
+  --color-secondary-500: 236 72 153;
+  --color-secondary-600: 219 39 119;
+  --color-secondary-700: 190 24 93;
+  --color-secondary-800: 157 23 77;
+  --color-secondary-900: 131 24 67;
+}
+
+/* ============================================================================
+   DARK MODE
+   ============================================================================ */
+
+.dark {
+  --color-bg: 17 24 39;
+  --color-surface: 31 41 55;
+  --color-text: 249 250 251;
+  --color-text-muted: 156 163 175;
+}
+
+/* Dark mode base styles */
+.dark body {
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+}
+
+/* Dark mode auto-classes */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-mode="light"]) {
+    --color-bg: 17 24 39;
+    --color-surface: 31 41 55;
+    --color-text: 249 250 251;
+    --color-text-muted: 156 163 175;
+  }
+}
+
+/* Classi utility per usare le variabili CSS */
+@layer utilities {
+  /* Background & Surface */
+  .bg-theme { background-color: rgb(var(--color-bg)); }
+  .bg-surface { background-color: rgb(var(--color-surface)); }
+  .text-theme { color: rgb(var(--color-text)); }
+  .text-muted { color: rgb(var(--color-text-muted)); }
+  
+  /* Primary colors */
+  .bg-primary-50 { background-color: rgb(var(--color-primary-50)); }
+  .bg-primary-100 { background-color: rgb(var(--color-primary-100)); }
+  .bg-primary-200 { background-color: rgb(var(--color-primary-200)); }
+  .bg-primary-300 { background-color: rgb(var(--color-primary-300)); }
+  .bg-primary-400 { background-color: rgb(var(--color-primary-400)); }
+  .bg-primary-500 { background-color: rgb(var(--color-primary-500)); }
+  .bg-primary-600 { background-color: rgb(var(--color-primary-600)); }
+  .bg-primary-700 { background-color: rgb(var(--color-primary-700)); }
+  .bg-primary-800 { background-color: rgb(var(--color-primary-800)); }
+  .bg-primary-900 { background-color: rgb(var(--color-primary-900)); }
+  
+  .text-primary-50 { color: rgb(var(--color-primary-50)); }
+  .text-primary-100 { color: rgb(var(--color-primary-100)); }
+  .text-primary-200 { color: rgb(var(--color-primary-200)); }
+  .text-primary-300 { color: rgb(var(--color-primary-300)); }
+  .text-primary-400 { color: rgb(var(--color-primary-400)); }
+  .text-primary-500 { color: rgb(var(--color-primary-500)); }
+  .text-primary-600 { color: rgb(var(--color-primary-600)); }
+  .text-primary-700 { color: rgb(var(--color-primary-700)); }
+  .text-primary-800 { color: rgb(var(--color-primary-800)); }
+  .text-primary-900 { color: rgb(var(--color-primary-900)); }
+  
+  .border-primary-50 { border-color: rgb(var(--color-primary-50)); }
+  .border-primary-100 { border-color: rgb(var(--color-primary-100)); }
+  .border-primary-200 { border-color: rgb(var(--color-primary-200)); }
+  .border-primary-300 { border-color: rgb(var(--color-primary-300)); }
+  .border-primary-400 { border-color: rgb(var(--color-primary-400)); }
+  .border-primary-500 { border-color: rgb(var(--color-primary-500)); }
+  .border-primary-600 { border-color: rgb(var(--color-primary-600)); }
+  .border-primary-700 { border-color: rgb(var(--color-primary-700)); }
+  .border-primary-800 { border-color: rgb(var(--color-primary-800)); }
+  .border-primary-900 { border-color: rgb(var(--color-primary-900)); }
+  
+  .ring-primary-500 { --tw-ring-color: rgb(var(--color-primary-500)); }
+  .ring-primary-600 { --tw-ring-color: rgb(var(--color-primary-600)); }
+  
+  .hover\:bg-primary-50:hover { background-color: rgb(var(--color-primary-50)); }
+  .hover\:bg-primary-100:hover { background-color: rgb(var(--color-primary-100)); }
+  .hover\:bg-primary-600:hover { background-color: rgb(var(--color-primary-600)); }
+  .hover\:bg-primary-700:hover { background-color: rgb(var(--color-primary-700)); }
+  
+  .hover\:text-primary-600:hover { color: rgb(var(--color-primary-600)); }
+  .hover\:text-primary-700:hover { color: rgb(var(--color-primary-700)); }
+  
+  .focus\:ring-primary-500:focus { --tw-ring-color: rgb(var(--color-primary-500)); }
+  .focus\:border-primary-500:focus { border-color: rgb(var(--color-primary-500)); }
+
+  /* Secondary colors */
+  .bg-secondary-50 { background-color: rgb(var(--color-secondary-50)); }
+  .bg-secondary-100 { background-color: rgb(var(--color-secondary-100)); }
+  .bg-secondary-200 { background-color: rgb(var(--color-secondary-200)); }
+  .bg-secondary-300 { background-color: rgb(var(--color-secondary-300)); }
+  .bg-secondary-400 { background-color: rgb(var(--color-secondary-400)); }
+  .bg-secondary-500 { background-color: rgb(var(--color-secondary-500)); }
+  .bg-secondary-600 { background-color: rgb(var(--color-secondary-600)); }
+  .bg-secondary-700 { background-color: rgb(var(--color-secondary-700)); }
+  .bg-secondary-800 { background-color: rgb(var(--color-secondary-800)); }
+  .bg-secondary-900 { background-color: rgb(var(--color-secondary-900)); }
+  
+  .text-secondary-50 { color: rgb(var(--color-secondary-50)); }
+  .text-secondary-100 { color: rgb(var(--color-secondary-100)); }
+  .text-secondary-200 { color: rgb(var(--color-secondary-200)); }
+  .text-secondary-300 { color: rgb(var(--color-secondary-300)); }
+  .text-secondary-400 { color: rgb(var(--color-secondary-400)); }
+  .text-secondary-500 { color: rgb(var(--color-secondary-500)); }
+  .text-secondary-600 { color: rgb(var(--color-secondary-600)); }
+  .text-secondary-700 { color: rgb(var(--color-secondary-700)); }
+  .text-secondary-800 { color: rgb(var(--color-secondary-800)); }
+  .text-secondary-900 { color: rgb(var(--color-secondary-900)); }
+  
+  .border-secondary-300 { border-color: rgb(var(--color-secondary-300)); }
+  .border-secondary-400 { border-color: rgb(var(--color-secondary-400)); }
+  .border-secondary-500 { border-color: rgb(var(--color-secondary-500)); }
+  .border-secondary-600 { border-color: rgb(var(--color-secondary-600)); }
+  .border-secondary-700 { border-color: rgb(var(--color-secondary-700)); }
+  
+  .ring-secondary-500 { --tw-ring-color: rgb(var(--color-secondary-500)); }
+  
+  .hover\:bg-secondary-50:hover { background-color: rgb(var(--color-secondary-50)); }
+  .hover\:bg-secondary-100:hover { background-color: rgb(var(--color-secondary-100)); }
+  .hover\:bg-secondary-600:hover { background-color: rgb(var(--color-secondary-600)); }
+  .hover\:bg-secondary-700:hover { background-color: rgb(var(--color-secondary-700)); }
+  
+  .hover\:text-secondary-600:hover { color: rgb(var(--color-secondary-600)); }
+  .hover\:text-secondary-700:hover { color: rgb(var(--color-secondary-700)); }
+
+  /* Dark mode variants for primary */
+  .dark\:bg-primary-900\/30:is(.dark *) { background-color: rgb(var(--color-primary-900) / 0.3); }
+  .dark\:bg-primary-900\/50:is(.dark *) { background-color: rgb(var(--color-primary-900) / 0.5); }
+  .dark\:text-primary-300:is(.dark *) { color: rgb(var(--color-primary-300)); }
+  .dark\:text-primary-400:is(.dark *) { color: rgb(var(--color-primary-400)); }
+  .dark\:border-primary-700:is(.dark *) { border-color: rgb(var(--color-primary-700)); }
+  .dark\:hover\:bg-primary-900\/30:is(.dark *):hover { background-color: rgb(var(--color-primary-900) / 0.3); }
+
+  /* Dark mode variants for secondary */
+  .dark\:bg-secondary-900\/50:is(.dark *) { background-color: rgb(var(--color-secondary-900) / 0.5); }
+  .dark\:text-secondary-300:is(.dark *) { color: rgb(var(--color-secondary-300)); }
+  
+  /* Border secondary additional */
+  .border-secondary-50 { border-color: rgb(var(--color-secondary-50)); }
+  .border-secondary-100 { border-color: rgb(var(--color-secondary-100)); }
+  .border-secondary-200 { border-color: rgb(var(--color-secondary-200)); }
+  .border-secondary-800 { border-color: rgb(var(--color-secondary-800)); }
+  .border-secondary-900 { border-color: rgb(var(--color-secondary-900)); }
+  
+  /* Focus ring secondary */
+  .focus\:ring-secondary-500:focus { --tw-ring-color: rgb(var(--color-secondary-500)); }
+  .focus\:border-secondary-500:focus { border-color: rgb(var(--color-secondary-500)); }
+}
+
+/* Custom styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: rgb(var(--color-surface));
+  color: rgb(var(--color-text));
+}
+
+/* Dark mode body */
+.dark body {
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+}
+
+/* Leaflet fixes */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.leaflet-control-container .leaflet-top,
+.leaflet-control-container .leaflet-bottom {
+  z-index: 400;
+}
+
+/* Custom marker icons - remove default Leaflet styling */
+.custom-marker-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-cluster-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Marker cluster default style override */
+.marker-cluster {
+  background: transparent !important;
+}
+
+.marker-cluster div {
+  background: transparent !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Custom scrollbar for dark sidebar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .mobile-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+}
+
+/* Animation */
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Vehicle marker */
+.vehicle-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2563eb;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.vehicle-marker.moving {
+  background: #16a34a;
+}
+
+.vehicle-marker.stopped {
+  background: #dc2626;
+}
+
+/* Custom vehicle marker wrapper */
+.custom-vehicle-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.vehicle-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicle-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Cluster icons */
+.custom-cluster-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.cluster-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+.cluster-icon.cluster-small {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  font-size: 14px;
+}
+
+.cluster-icon.cluster-medium {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  font-size: 16px;
+}
+
+.cluster-icon.cluster-large {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  font-size: 18px;
+}
+
+/* Map controls toggle */
+.map-control-toggle {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  z-index: 100;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  pointer-events: auto;
+}
+
+.map-control-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  pointer-events: auto;
+}
+
+.map-control-btn:hover {
+  background: #f3f4f6;
+}
+
+.map-control-btn.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+/* Geofence colors */
+.geofence-enter {
+  background-color: #dcfce7;
+  border-left: 4px solid #16a34a;
+}
+
+.geofence-exit {
+  background-color: #fef2f2;
+  border-left: 4px solid #dc2626;
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #2563eb;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Leaflet popup fix - sempre visibile */
+.leaflet-popup {
+  max-width: 300px;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.leaflet-popup-content {
+  margin: 8px 12px;
+  max-width: 280px;
+}
+
+/* Assicura che il popup si sposti per essere visibile */
+.leaflet-popup-pane {
+  z-index: 700;
+}
+
+/* Legenda colori bordi veicoli */
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid;
+}

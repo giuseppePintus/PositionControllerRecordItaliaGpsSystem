@@ -1,0 +1,17 @@
+node_modules/
+.env
+*.log
+dist/
+.DS_Store
+coverage/
+*.sqlite
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+
+# Runtime data & sessions
+server/data/
+server/server/
+server/logs/
+.wwebjs_cache/
