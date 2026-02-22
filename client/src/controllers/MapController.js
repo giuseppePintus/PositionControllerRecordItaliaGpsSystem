@@ -544,6 +544,7 @@ class MapController {
    */
   hideVehicle(plate) {
     this._filters.hiddenVehicles.add(this._normalizePlate(plate));
+    this._rebuildVehicles();
     this._triggerUpdate('filters');
   }
 
@@ -553,6 +554,7 @@ class MapController {
    */
   showVehicle(plate) {
     this._filters.hiddenVehicles.delete(this._normalizePlate(plate));
+    this._rebuildVehicles();
     this._triggerUpdate('filters');
   }
 
@@ -578,28 +580,36 @@ class MapController {
    */
   getFilteredVehicles() {
     let vehicles = this.getVehicles();
-    
+
+    // Filter out hidden vehicles
+    if (this._filters.hiddenVehicles.size > 0) {
+      vehicles = vehicles.filter(v => {
+        const plate = this._normalizePlate(v.data.plate || v.plate);
+        return !this._filters.hiddenVehicles.has(plate);
+      });
+    }
+
     if (!this._filters.showMoving) {
       vehicles = vehicles.filter(v => v.data.speed <= 3);
     }
-    
+
     if (!this._filters.showStopped) {
       vehicles = vehicles.filter(v => v.data.speed > 3);
     }
-    
+
     if (this._filters.showWithTemperature) {
       vehicles = vehicles.filter(v => v.data.hasTemperature);
     }
-    
+
     if (this._filters.searchTerm) {
       const term = this._filters.searchTerm.toLowerCase();
-      vehicles = vehicles.filter(v => 
+      vehicles = vehicles.filter(v =>
         v.data.plate?.toLowerCase().includes(term) ||
         v.data.nickname?.toLowerCase().includes(term) ||
         v.data.address?.toLowerCase().includes(term)
       );
     }
-    
+
     return vehicles;
   }
 
