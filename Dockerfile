@@ -1,5 +1,5 @@
 # Build stage
-FROM node:20-alpine as builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -30,8 +30,16 @@ RUN npm install --omit=dev
 COPY --from=builder /app/client/dist ./client/dist
 COPY --from=builder /app/server ./server
 
+# Copy env example as fallback reference
+COPY .env.example .env.example
+
 # Create data directory
 RUN mkdir -p /app/data
+
+# Non-root user for security
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+RUN chown -R appuser:appgroup /app/data
+USER appuser
 
 # Environment
 ENV NODE_ENV=production
