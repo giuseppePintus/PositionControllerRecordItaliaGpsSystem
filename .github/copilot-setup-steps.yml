@@ -1,0 +1,25 @@
+# Copilot Coding Agent - Environment Setup
+# This file configures the cloud agent's environment on GitHub.
+# It runs BEFORE the agent starts working on your code.
+
+name: "Copilot Setup Steps"
+
+on: copilot_seat_management_enabled
+
+steps:
+  # 1. Use Node.js 20 (matches Dockerfile and engines field)
+  - uses: actions/setup-node@v4
+    with:
+      node-version: "20"
+
+  # 2. Install root dependencies (server)
+  - name: Install server dependencies
+    run: npm install
+
+  # 3. Install client dependencies
+  - name: Install client dependencies
+    run: cd client && npm install
+
+  # 4. Build frontend to verify it compiles
+  - name: Build client
+    run: cd client && npm run build
